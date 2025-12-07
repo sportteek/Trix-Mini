@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Trix Mini Game</title>
+<style>
+    body {
+        margin: 0;
+        font-family: sans-serif;
+        background: #0f0f0f;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+    .container {
+        width: 100%;
+        max-width: 400px;
+        background: #1a1a1a;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 0 12px rgba(255,255,255,0.1);
+    }
+    h1 {
+        text-align: center;
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+    .card {
+        width: 100%;
+        background: #272727;
+        padding: 18px;
+        border-radius: 12px;
+        margin-top: 15px;
+        font-size: 20px;
+        text-align: center;
+        box-shadow: 0 0 6px rgba(0,0,0,0.4);
+    }
+    button {
+        width: 100%;
+        padding: 15px;
+        border: none;
+        border-radius: 12px;
+        margin-top: 20px;
+        background: #ffcc00;
+        color: #000;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    button:active {
+        transform: scale(0.97);
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Trix Game</h1>
+    <div id="cardBox" class="card">Press Start</div>
+    <button onclick="drawCard()">START</button>
+</div>
+
+<script>
+const cards = [
+    "Queen", "Diamonds", "Collections", "Luto", "Trix"
+];
+
+function drawCard() {
+    const card = cards[Math.floor(Math.random() * cards.length)];
+    document.getElementById("cardBox").innerText = card;
+}
+</script>
+
+</body>
+</html>
